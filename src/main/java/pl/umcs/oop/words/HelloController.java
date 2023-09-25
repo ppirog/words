@@ -75,7 +75,11 @@ public class HelloController {
 
     public void setFilterField(String word, CurrentTime currentTime) {
         String filter = filterField.getText();
-
+        try {
+            Thread.sleep(25);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         List<String> filteredList = new ArrayList<>();
         for (String word1 : fullWords) {
             String[] temp = word1.split(" ");
