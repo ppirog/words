@@ -16,7 +16,7 @@ public class WordBag {
     private List<String> words = new ArrayList<>();
 
     public void populate() {
-        String path = "/home/ppirog/IdeaProjects/words/src/main/resources/slowa.txt";
+        String path = "../words/src/main/resources/slowa.txt";
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             words = stream.collect(Collectors.toList());
         } catch (IOException e) {

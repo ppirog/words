@@ -1,4 +1,5 @@
 # words
+
 This GUI app enables filter words and show it ascending order
 
 All words are stored in SQLite database

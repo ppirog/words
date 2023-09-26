@@ -13,10 +13,6 @@ public class ClientThread extends Thread {
         this.server = server;
     }
 
-    public Socket getSocket() {
-        return socket;
-    }
-
     public void run() {
         try {
             InputStream input = socket.getInputStream();

@@ -1,7 +1,6 @@
 package pl.umcs.oop.words;
 
 import javafx.application.Platform;
-import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -19,9 +18,6 @@ public class HelloController {
     public ListView<String> wordList;
     public Label wordCountLabel;
     public Label currentCountLabel;
-    private ServerThread serverThread;
-    @FXML
-    private Label welcomeText;
     private Server server;
     private WordBag wordBag;
     private boolean doJustOneTimeFilterList = false;
@@ -34,7 +30,7 @@ public class HelloController {
         wordBag.populate();
         createServer();
         server.startSending();
-        serverThread = new ServerThread("localhost", 5000, this);
+        ServerThread serverThread = new ServerThread("localhost", 5000, this);
         serverThread.setDaemon(true);
         serverThread.start();
 
